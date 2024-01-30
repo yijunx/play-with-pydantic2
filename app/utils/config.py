@@ -13,13 +13,13 @@ class Settings(BaseSettings):
 
 
 class DevSettings(Settings):
-    model_config = SettingsConfigDict(env_file='config/dev.env', extra='ignore')
+    model_config = SettingsConfigDict(env_file="config/dev.env", extra="ignore")
 
 
 class ProdSettings(Settings):
     # it reads from envvar!
     ...
-    
+
 
 def find_which_config():
     if os.getenv("ENV"):  # there is DOMAIN name provided
@@ -29,6 +29,7 @@ def find_which_config():
 
     def func() -> Settings:
         return config
+
     return func()
 
 

@@ -12,7 +12,8 @@ class Chapter(BaseModel):
 
 
 class Book(BaseModel):
-    author: Author
+    authors: list[Author]
+    title: str
     chapters: list[Chapter]
     isbn: str
 
@@ -20,9 +21,9 @@ class Book(BaseModel):
 if __name__ == "__main__":
     author = Author(name="tom", nationality="Swiss")
     book = Book(
-        author=author,
+        authors=[author],
         chapters=[Chapter(name="chapter1", starting_page=1)],
-        isbn="isbn-00003-49951"
+        isbn="isbn-00003-49951",
     )
     # just print
     print(book)
