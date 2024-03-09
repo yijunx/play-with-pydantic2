@@ -3,8 +3,8 @@ from typing import Optional
 
 
 class QueryPagination(BaseModel):
-    page: Optional[int] = 1
-    size: Optional[int] = 5
+    page: int = 1
+    size: int = 5
 
 
 class ResponsePagination(BaseModel):

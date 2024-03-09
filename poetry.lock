@@ -133,6 +133,21 @@ async = ["asgiref (>=3.2)"]
 dotenv = ["python-dotenv"]
 
 [[package]]
+name = "flask-pydantic"
+version = "0.12.0"
+description = "Flask extension for integration with Pydantic library"
+optional = false
+python-versions = ">=3.7"
+files = [
+    {file = "Flask-Pydantic-0.12.0.tar.gz", hash = "sha256:b80f18cc7efe332b47eafbae141541e9875777132ba30d7c95f9fef9bf2a6977"},
+    {file = "Flask_Pydantic-0.12.0-py3-none-any.whl", hash = "sha256:c80825d74eefa137d8d7f2396f6b376ee128329196d79eff1442bcfd816a6228"},
+]
+
+[package.dependencies]
+Flask = "*"
+pydantic = ">=2.0"
+
+[[package]]
 name = "greenlet"
 version = "3.0.3"
 description = "Lightweight in-process concurrent programming"
@@ -666,4 +681,4 @@ watchdog = ["watchdog (>=2.3)"]
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.12"
-content-hash = "3b73c819bd13d3304fa9047475b837cc494097dd94080883d8bef4c176209aca"
+content-hash = "c2ee01112d1087a19f84a632ab776c4ee42e16976a78994e1bc5c4067e088cdd"

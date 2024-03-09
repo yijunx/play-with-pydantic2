@@ -1,4 +1,5 @@
 from flask import Blueprint
+from flask_pydantic import validate
 
 
 bp = Blueprint("book", __name__, url_prefix="/apis/online-library/books")

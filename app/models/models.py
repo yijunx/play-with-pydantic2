@@ -1,25 +1,40 @@
 from pydantic import BaseModel
 
 
-class Author(BaseModel):
+class AuthorCreate(BaseModel):
     name: str
     nationality: str
 
 
-class Chapter(BaseModel):
+class Author(AuthorCreate):
+    id: str
+
+
+class ChapterCreate(BaseModel):
     name: str
     starting_page: int
 
 
-class Book(BaseModel):
-    authors: list[Author]
+class Chapter(ChapterCreate):
+    id: str
+
+
+class BookCreate(BaseModel):
     title: str
-    chapters: list[Chapter]
     isbn: str
+    author_ids: list[str]
+
+
+class Book(BookCreate):
+    id: str
+
+    # relation
+    authors: list[Author]
+    chapters: list[Chapter]
 
 
 if __name__ == "__main__":
-    author = Author(name="tom", nationality="Swiss")
+    author = Author(id="qwe", name="tom", nationality="Swiss")
     book = Book(
         authors=[author],
         chapters=[Chapter(name="chapter1", starting_page=1)],
